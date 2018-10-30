@@ -9,11 +9,17 @@
 #include "headers/arraylist.h"
 
 /* Function to compare values needed to get index while removing elements */
-boolean compare_int(void*, void*);
-boolean compare_float(void*, void*);
-boolean compare_long(void*, void*);
-boolean compare_double(void*, void*);
-boolean compare_strings(void*, void*);
+int compare_int(void*, void*);
+int compare_float(void*, void*);
+int compare_long(void*, void*);
+int compare_double(void*, void*);
+int compare_strings(void*, void*);
+
+boolean equals_int(void*, void*);
+boolean equals_float(void*, void*);
+boolean equals_long(void*, void*);
+boolean equals_double(void*, void*);
+boolean equals_strings(void*, void*);
 
 /* Custom error functions */
 void exception(char* message) {
@@ -154,23 +160,70 @@ char* new_string(char* string) {
 
 /*
  * Functions used to compare elements in the arraylist */
-boolean compare_int (void* element1, void* element2) {
+int compare_int (void* element1, void* element2) {
+    if(*(int*)element1 < *(int*)element2)
+        return -1;
+    else if (*(int*)element1 == *(int*)element2)
+        return 0;
+    
+    return 1;
+}
+
+int compare_float (void* element1, void* element2) {
+    if(*(float*)element1 < *(float*)element2)
+        return -1;
+    else if (*(float*)element1 == *(float*)element2)
+        return 0;
+    
+    return 1;
+}
+
+int compare_long (void* element1, void* element2) {
+    if(*(long*)element1 < *(long*)element2)
+        return -1;
+    else if (*(long*)element1 == *(long*)element2)
+        return 0;
+    
+    return 1;
+}
+
+int compare_double (void* element1, void* element2) {
+    if(*(double*)element1 < *(double*)element2)
+        return -1;
+    else if (*(double*)element1 == *(double*)element2)
+        return 0;
+    
+    return 1;
+}
+
+int compare_strings (void* element1, void* element2) {
+    if(strcmp((char*) element1, (char*) element2) < 0)
+        return -1;
+    else if (strcmp((char*) element1, (char*) element2) == 0)
+        return 0;
+    
+    return 1;
+}
+
+/* We could just call the compare and look that the result is 0
+ * I implement separate functions just for make them more intuitive. */
+boolean equals_int (void* element1, void* element2) {
     return (*(int*)element1 == *(int*)element2);
 }
 
-boolean compare_float (void* element1, void* element2) {
+boolean equals_float (void* element1, void* element2) {
     return (*(float*)element1 == *(float*)element2);
 }
 
-boolean compare_long (void* element1, void* element2) {
+boolean equals_long (void* element1, void* element2) {
     return (*(long*)element1 == *(long*)element2);
 }
 
-boolean compare_double (void* element1, void* element2) {
+boolean equals_double (void* element1, void* element2) {
     return (*(double*)element1 == *(double*)element2);
 }
 
-boolean compare_strings (void* element1, void* element2) {
+boolean equals_strings (void* element1, void* element2) {
     return (strcmp((char*) element1, (char*) element2) == 0);
 }
 
