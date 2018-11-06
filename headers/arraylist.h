@@ -30,7 +30,25 @@ void ArrayList_add(ArrayList* , void* );
 void* ArrayList_get(ArrayList* , int );
 int ArrayList_get_index(ArrayList* , void* , boolean (*fptr)(void*, void*) );
 void ArrayList_remove(ArrayList* , int );
+void ArrayList_print(ArrayList* , void (*fptr)(void*)); 
 void ArrayList_clear(ArrayList* );
 void ArrayList_free (ArrayList* );
+
+// Declaration of function for pointer functions
+int compare_int(void* , void*);
+int compare_float(void* , void*);
+int compare_long(void* , void*);
+int compare_double(void* , void*);
+int compare_strings(void* , void*);
+boolean equals_int (void* , void*);
+boolean equals_float (void* , void*);
+boolean equals_long (void* , void*);
+boolean equals_double (void* , void*);
+boolean equals_strings (void* , void*);
+void print_int (void*);
+void print_float (void*);
+void print_long (void*);
+void print_double (void*);
+void print_string (void*);
 
 #endif
