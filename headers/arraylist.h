@@ -34,17 +34,28 @@ void ArrayList_print(ArrayList* , void (*fptr)(void*));
 void ArrayList_clear(ArrayList* );
 void ArrayList_free (ArrayList* );
 
-// Declaration of function for pointer functions
+// New Elements
+int* new_int(int);
+float* new_float(float);
+long* new_long(long);
+double* new_double(double);
+char* new_string(char*);
+
+// Compare elements
 int compare_int(void* , void*);
 int compare_float(void* , void*);
 int compare_long(void* , void*);
 int compare_double(void* , void*);
 int compare_strings(void* , void*);
+
+// Check that two elements are equals
 boolean equals_int (void* , void*);
 boolean equals_float (void* , void*);
 boolean equals_long (void* , void*);
 boolean equals_double (void* , void*);
 boolean equals_strings (void* , void*);
+
+// Print elements
 void print_int (void*);
 void print_float (void*);
 void print_long (void*);
