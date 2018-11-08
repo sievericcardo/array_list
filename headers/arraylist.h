@@ -39,6 +39,7 @@ int* new_int(int);
 float* new_float(float);
 long* new_long(long);
 double* new_double(double);
+char* new_char(char);
 char* new_string(char*);
 
 // Compare elements
@@ -46,6 +47,7 @@ int compare_int(void* , void*);
 int compare_float(void* , void*);
 int compare_long(void* , void*);
 int compare_double(void* , void*);
+int compare_chars(void* , void*);
 int compare_strings(void* , void*);
 
 // Check that two elements are equals
@@ -53,6 +55,7 @@ boolean equals_int (void* , void*);
 boolean equals_float (void* , void*);
 boolean equals_long (void* , void*);
 boolean equals_double (void* , void*);
+boolean equals_char (void* , void*);
 boolean equals_strings (void* , void*);
 
 // Print elements
@@ -60,6 +63,7 @@ void print_int (void*);
 void print_float (void*);
 void print_long (void*);
 void print_double (void*);
+void print_char (void*);
 void print_string (void*);
 
 #endif
