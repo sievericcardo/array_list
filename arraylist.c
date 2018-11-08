@@ -119,9 +119,6 @@ void ArrayList_print(ArrayList* arraylist, void (*fptr)(void*)) {
     printf("\n");
 }
 
-int* new_int(int value);
-void print_int (void *element);
-
 /*
  * The following functions serve us to create new elements that we need when
  * we insert the into the list.
@@ -243,7 +240,7 @@ void print_long (void *element) {
 }
 
 void print_double (void *element) {
-    printf("%f ", *(double *)element);
+    printf("%lf ", *(double *)element);
 }
 
 void print_string (void *element) {
