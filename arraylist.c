@@ -8,19 +8,6 @@
  *  can be inspected with ArrayList_get_index. */
 #include "headers/arraylist.h"
 
-/* Function to compare values needed to get index while removing elements */
-int compare_int(void*, void*);
-int compare_float(void*, void*);
-int compare_long(void*, void*);
-int compare_double(void*, void*);
-int compare_strings(void*, void*);
-
-boolean equals_int(void*, void*);
-boolean equals_float(void*, void*);
-boolean equals_long(void*, void*);
-boolean equals_double(void*, void*);
-boolean equals_strings(void*, void*);
-
 /* Custom error functions */
 void exception(char* message) {
     int errnum = errno;
