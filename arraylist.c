@@ -151,6 +151,13 @@ double* new_double(double value) {
     return element;
 }
 
+char* new_char(char value) {
+    char* element = (char*) malloc(sizeof(char));
+    *element = value;
+
+    return element;
+}
+
 char* new_string(char* string) {
     return string;
 }
@@ -193,6 +200,15 @@ int compare_double (void* element1, void* element2) {
     return 1;
 }
 
+int compare_chars (void* element1, void* element2) {
+    if(strcmp((char*) element1, (char*) element2) < 0)
+        return -1;
+    else if (strcmp((char*) element1, (char*) element2) == 0)
+        return 0;
+    
+    return 1;
+}
+
 int compare_strings (void* element1, void* element2) {
     if(strcmp((char*) element1, (char*) element2) < 0)
         return -1;
@@ -220,6 +236,10 @@ boolean equals_double (void* element1, void* element2) {
     return (*(double*)element1 == *(double*)element2);
 }
 
+boolean equals_char (void* element1, void* element2) {
+    return (*(char*) element1 == *(char*)element2);
+}
+
 boolean equals_strings (void* element1, void* element2) {
     return (strcmp((char*) element1, (char*) element2) == 0);
 }
@@ -241,6 +261,10 @@ void print_long (void *element) {
 
 void print_double (void *element) {
     printf("%lf ", *(double *)element);
+}
+
+void print_char (void *element) {
+    printf("%c ", *(char *)element);
 }
 
 void print_string (void *element) {
