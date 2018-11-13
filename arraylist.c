@@ -117,6 +117,13 @@ int* new_int(int value) {
     return element;
 }
 
+int* new_big_int(int64_t value) {
+    int64_t* element = (int64_t*) malloc (sizeof(int));
+    *element = value;
+
+    return element;
+}
+
 float* new_float(float value) {
     float* element = (float*) malloc (sizeof(float));
     *element = value;
@@ -155,6 +162,15 @@ int compare_int (void* element1, void* element2) {
     if(*(int*)element1 < *(int*)element2)
         return -1;
     else if (*(int*)element1 == *(int*)element2)
+        return 0;
+    
+    return 1;
+}
+
+int compare_big_int (void* element1, void* element2) {
+    if(*(int64_t*)element1 < *(int64_t*)element2)
+        return -1;
+    else if (*(int64_t*)element1 == *(int64_t*)element2)
         return 0;
     
     return 1;
@@ -211,6 +227,10 @@ boolean equals_int (void* element1, void* element2) {
     return (*(int*)element1 == *(int*)element2);
 }
 
+boolean equals_big_int (void* element1, void* element2) {
+    return (*(int64_t*)element1 == *(int64_t*)element2);
+}
+
 boolean equals_float (void* element1, void* element2) {
     return (*(float*)element1 == *(float*)element2);
 }
@@ -236,6 +256,10 @@ boolean equals_strings (void* element1, void* element2) {
  * the content of the list */
 void print_int (void *element) {
     printf("%d ", *(int *)element);
+}
+
+void print_big_int (void *element) {
+    printf("%lld ", *(int64_t *)element);
 }
 
 void print_float (void *element) {
