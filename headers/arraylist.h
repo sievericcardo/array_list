@@ -1,7 +1,7 @@
 /*
  *  Header file for the ArrayList
  * 
- *  File:   priority_queue.h
+ *  File:   arraylist.h
  *  Author: Riccardo Sieve
  *
  *  Created on 22 October 2018, 11:49
