@@ -38,6 +38,8 @@ ArrayList* ArrayList_create() {
     if(!arraylist->data)
         malloc_exception();
 
+    assert(arraylist);
+
     return arraylist;
 }
 

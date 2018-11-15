@@ -20,7 +20,7 @@
 /* Custom boolean type */
 typedef enum {FALSE, TRUE} boolean;
 
-typedef struct ArrayList {
+typedef struct _ArrayList {
     size_t size;
     size_t capacity;
     void ** data;
