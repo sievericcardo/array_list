@@ -53,3 +53,5 @@ dkms.conf
 
 # Extra rules
 .DS_Store
+.vscode
+build/
