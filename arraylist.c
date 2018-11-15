@@ -117,7 +117,7 @@ int* new_int(int value) {
     return element;
 }
 
-int* new_big_int(int64_t value) {
+int64_t* new_big_int(int64_t value) {
     int64_t* element = (int64_t*) malloc (sizeof(int));
     *element = value;
 
