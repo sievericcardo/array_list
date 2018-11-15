@@ -4,9 +4,9 @@ OUTPUT_TEST= build/arraylist_test.out
 C= gcc
 CFLAGS= -std=c99 -pedantic -Werror
 
-INPUT= $(C) $(CFLAGS) algorithms/insertion_sort.c usage/insertion_sort_usage.c -o $(OUTPUT)
+INPUT= $(C) $(CFLAGS) arraylist.c usage/main.c -o $(OUTPUT)
 
-INPUT_TEST= $(C) $(CFLAGS) arraylist.c test/arraylist_tests.c -o $(OUTPUT_TEST)
+INPUT_TEST= $(C) $(CFLAGS) arraylist.c test/arraylist_tests.c test/Unity/unity.c -o $(OUTPUT_TEST)
 
 .PHONY: clean
 
