@@ -19,5 +19,5 @@ clean:
 run:
 	./$(OUTPUT)
 
-test:
+arraylist_test:
 	./$(OUTPUT_TEST)
