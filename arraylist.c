@@ -155,7 +155,10 @@ char* new_char(char value) {
 }
 
 char* new_string(char* string) {
-    return string;
+    char* new_string = (char*) malloc (strlen(string) * sizeof(char));
+    strcpy(new_string, string);
+
+    return new_string;
 }
 
 /*
