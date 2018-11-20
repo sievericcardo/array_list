@@ -114,6 +114,10 @@ void ArrayList_print(ArrayList* arraylist, void (*fptr)(void*)) {
  * We create a function for almost every type */
 int* new_int(int value) {
     int* element = (int*) malloc (sizeof(int));
+
+    if(!element)
+        malloc_exception();
+
     *element = value;
 
     return element;
@@ -121,6 +125,10 @@ int* new_int(int value) {
 
 int64_t* new_big_int(int64_t value) {
     int64_t* element = (int64_t*) malloc (sizeof(int));
+
+    if(!element)
+        malloc_exception();
+
     *element = value;
 
     return element;
@@ -128,6 +136,10 @@ int64_t* new_big_int(int64_t value) {
 
 float* new_float(float value) {
     float* element = (float*) malloc (sizeof(float));
+
+    if(!element)
+        malloc_exception();
+
     *element = value;
 
     return element;
@@ -135,6 +147,10 @@ float* new_float(float value) {
 
 long* new_long(long value) {
     long* element = (long*) malloc (sizeof(long));
+
+    if(!element)
+        malloc_exception();
+
     *element = value;
 
     return element;
@@ -142,6 +158,10 @@ long* new_long(long value) {
 
 double* new_double(double value) {
     double* element = (double*) malloc (sizeof(double));
+
+    if(!element)
+        malloc_exception();
+
     *element = value;
 
     return element;
@@ -149,6 +169,10 @@ double* new_double(double value) {
 
 char* new_char(char value) {
     char* element = (char*) malloc(sizeof(char));
+
+    if(!element)
+        malloc_exception();
+
     *element = value;
 
     return element;
@@ -156,6 +180,10 @@ char* new_char(char value) {
 
 char* new_string(char* string) {
     char* new_string = (char*) malloc (strlen(string) * sizeof(char));
+
+    if(!new_string)
+        malloc_exception();
+
     strcpy(new_string, string);
 
     return new_string;
