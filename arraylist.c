@@ -19,7 +19,7 @@ void malloc_exception() {
     exception("Error while allocating memory\n");
 }
 
-void relloc_exception() {
+void realloc_exception() {
     exception("Error while reallocating memory\n");
 }
 
@@ -53,7 +53,7 @@ void dynamic_memory_allocation(ArrayList* arraylist) {
     arraylist->data = realloc(arraylist->data, arraylist->capacity * sizeof(void*));
 
     if(!arraylist->data)
-        relloc_exception();
+        realloc_exception();
 }
 
 /* Adding the element in the end of the ArrayList */
@@ -179,12 +179,15 @@ char* new_char(char value) {
 }
 
 char* new_string(char* string) {
-    char* new_string = (char*) malloc (strlen(string) * sizeof(char));
+    int string_length = (strlen(string) > MAX_CHAR) ? MAX_CHAR : strlen(string);
+
+    // The +1 is due to the '\0' and '\n' to avoid possible errors
+    char* new_string = (char*) malloc ((string_length + 1) * sizeof(char));
 
     if(!new_string)
         malloc_exception();
 
-    strcpy(new_string, string);
+    strncpy(new_string, string, string_length);
 
     return new_string;
 }

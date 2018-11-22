@@ -10,6 +10,8 @@
 #ifndef _ARRAYLIST_H_INCLUDED_
 #define _ARRAYLIST_H_INCLUDED_
 
+#define MAX_CHAR 1000 // to avoid buffer overflow
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
