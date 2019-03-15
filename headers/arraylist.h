@@ -30,6 +30,7 @@ typedef struct _ArrayList {
 
 ArrayList* ArrayList_create();
 void ArrayList_add(ArrayList* , void* );
+size_t ArrayList_get_size (ArrayList* );
 void* ArrayList_get(ArrayList* , int );
 int ArrayList_get_index(ArrayList* , void* , boolean (*fptr)(void*, void*) );
 void ArrayList_remove(ArrayList* , int );

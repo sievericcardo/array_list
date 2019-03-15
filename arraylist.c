@@ -63,6 +63,11 @@ void ArrayList_add(ArrayList* arraylist, void* data) {
     arraylist->data[arraylist->size-1] = data;   
 }
 
+/* Return size of the arraylist */
+size_t ArrayList_get_size (ArrayList* arraylist) {
+    return arraylist->size;
+}
+
 /* Get element at specified index with complexity O(1) */
 void* ArrayList_get(ArrayList* arraylist, int index) {
     return arraylist->data[index];
